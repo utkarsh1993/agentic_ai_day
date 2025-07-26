@@ -7,6 +7,8 @@ from agents.crop_recommendation_agent.agent import execute as execute_crop_recom
 from agents.early_warning_system.agent import execute as execute_warning
 from agents.ask_me_anything_agent.agent import execute as execute_ama
 from agents.commodity_agent.agent import execute as execute_for_profitability
+from agents.risk_mitigation.local_alerts_agent import execute as execute_for_weather_risk
+from agents.risk_mitigation.weather_risk_agent import execute as execute_for_local_alerts
 import vertexai
 
 
@@ -37,6 +39,7 @@ async def execute(request):
         print("grower")
         agent_response = await execute_fertilizer_recommender(request)
     elif "commodity" in user_query.lower():
+        agent_to_call = "commodtiy_agent"
         print("commodity")
         agent_response = await execute_for_profitability(request)
     elif "crop recommendation" in user_query.lower():
@@ -54,6 +57,14 @@ async def execute(request):
         agent_to_call = "early_warning_system"
         print(agent_to_call)
         agent_response = await execute_warning(request)
+    elif "weather risk" in user_query.lower():
+        agent_to_call = "weather_risk_agent"
+        print(agent_to_call)
+        agent_response = await execute_for_weather_risk(request)
+    elif "local alerts" in user_query.lower():
+        agent_to_call = "local_news_alerts"
+        print(agent_to_call)
+        agent_response = await execute_for_local_alerts(request)    
     elif "ask me anything" in user_query.lower():
         agent_to_call = "ask_me_anything_agent"
         print(agent_to_call)

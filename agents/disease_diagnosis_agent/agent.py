@@ -67,9 +67,18 @@ disease_diagnosis_agent = Agent(
         
     Make sure the final response is in JSON format and follows format of above sample output
 
-Do not provide any additional explanation or text beyond the specified output. 
 
-!!! Do not generate citations/reference for the results from tool. Make sure to follow this, only generate text response.
+** IMPORTANT: DO not deviate from above format at any cost.
+
+** General Instructions **
+
+- It should cover response farmers with large land availability and small scale farmers as well
+
+- No need to generate citations/references separately. Return only text results. Return results in English
+
+- Do not provide any additional explanation or text beyond the specified output. 
+
+- !!! Do not provide references/citations in results, only provide text as final output.
 
 """,
 tools = [google_search]

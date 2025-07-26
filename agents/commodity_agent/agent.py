@@ -4,9 +4,9 @@ from google.adk.sessions import InMemorySessionService
 from google.adk.tools import google_search
 from google.genai import types
 import base64
-from datetime import datetime
-import calendar
-import pandas as pd
+# from datetime import datetime
+# import calendar
+# import pandas as pd
 import json
 
 import vertexai
@@ -78,12 +78,28 @@ Provide results in JSON format as shown below:
       }
     }
     ```
+    
+
+** IMPORTANT: DO not deviate from above format at any cost.
 
 - **Preserves your structure exactly**.
 - **Includes both options** with detailed outputs.
 - **Select the Best Market Name and City Name based on the current market price of `commodity_name` across the Indian market with the objective of maximize the Net Revenue Rs/Qtl by considering the transportation cost to the suggested market from the current location based on the latitude and longitude.   
 - **Anchors the recommendation** to the current market near the coordinates.
-- ** Do not provide any additional explanation or text beyond the specified output.""",
+- ** Do not provide any additional explanation or text beyond the specified output.
+
+ 
+** General Instructions **
+
+- It should cover response farmers with large land availability and small scale farmers as well
+
+- No need to generate citations/references separately. Return only text results. Return results in English
+
+- Do not provide any additional explanation or text beyond the specified output. 
+
+- !!! Do not provide references/citations in results, only provide text as final output.
+
+""",
     tools = [google_search]
 )
 
