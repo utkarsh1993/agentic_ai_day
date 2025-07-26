@@ -83,35 +83,14 @@ Provide the output in below format:
       },
       "confidence_score": 0.9,
       "recommended_action": "Reschedule produce transport to avoid delays. Stay updated via local news."
-    },
-    {
-      "type": "Riverine Flood",
-      "description": "Upstream dam release expected to raise river levels; potential overflow into adjacent fields.",
-      "severity_level": "Severe",
-      "forecast_date_range": {
-        "start_date": "2025-07-28",
-        "end_date": "2025-07-30"
-      },
-      "confidence_score": 0.93,
-      "recommended_action": "Secure vulnerable crop areas and avoid fieldwork near riverbanks. Notify nearby farmers."
-    },
-    {
-      "type": "Canal Water Release",
-      "description": "Scheduled canal water release on August 1 may improve irrigation availability.",
-      "severity_level": "Low",
-      "forecast_date_range": {
-        "start_date": "2025-08-01",
-        "end_date": "2025-08-01"
-      },
-      "confidence_score": 0.95,
-      "recommended_action": "Prepare fields for optimal water usage. Check valve access if irrigating manually."
+    }
     }
   ]
 }
 
 ** IMPORTANT: DO not deviate from above format at any cost.
 
-!!! IMPORTANT: Make sure to not provide references/citations in results, only provide text in English as final output.
+!!! IMPORTANT: Make sure to not provide references/citations links in results, only provide text in English as final output. Reomve theENSURE THIS AT ANY COST
 """,
     tools=[google_search]
 )

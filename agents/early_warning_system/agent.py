@@ -85,7 +85,7 @@ async def execute(request):
 
     Do not provide any additional explanation or text beyond the specified output. 
     
-    !!! Do not provide references/citations in results, only provide text..
+    !!! Do not provide references/citations links in results, only provide text.  ENSURE THIS AT ANY COST.
 
     **Instructions for the Agent:**
     1.  Analyze the data to identify all potential severe weather events.

@@ -10,6 +10,7 @@ from agents.commodity_agent.agent import execute as execute_for_profitability
 from agents.risk_mitigation.local_alerts_agent import execute as execute_for_local_alerts
 from agents.risk_mitigation.weather_risk_agent import execute as execute_for_weather_risk
 from agents.risk_mitigation.weather_risk_agent_long_term import execute as execute_for_seasonal_weather_risk
+from agents.government_schemes.government_scheme import execute as execute_govt_scheme_analyzer
 import vertexai
 
 
@@ -58,7 +59,7 @@ async def execute(request):
         agent_to_call = "early_warning_system"
         print(agent_to_call)
         agent_response = await execute_warning(request)
-    elif "seasonal weather risk" in user_query.lower():
+    elif "seasonal forecast" in user_query.lower():
         agent_to_call = "seasonal_weather_risk_agent"
         print(agent_to_call)
         agent_response = await execute_for_seasonal_weather_risk(request)
@@ -74,6 +75,10 @@ async def execute(request):
         agent_to_call = "ask_me_anything_agent"
         print(agent_to_call)
         agent_response = await execute_ama(request)
+    elif "government scheme" in user_query.lower():
+        agent_to_call = "Government Scheme Analyzer agent"
+        print(agent_to_call)
+        agent_response = await execute_govt_scheme_analyzer(request)
     else:
         agent_to_call = "ask_me_anything_agent"
         print(agent_to_call)

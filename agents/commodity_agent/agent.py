@@ -93,11 +93,11 @@ Provide results in JSON format as shown below:
 
 - It should cover response farmers with large land availability and small scale farmers as well
 
-- No need to generate citations/references separately. Return only text results. Return results in English
+- No need to generate citations/references separately. Return only text results. Return results in English.
 
 - Do not provide any additional explanation or text beyond the specified output. 
 
-- !!! Do not provide references/citations in results, only provide text as final output.
+- !!! Do not provide references/citations links in results, only provide text as final output.  ENSURE THIS AT ANY COST
 
 """,
     tools = [google_search]

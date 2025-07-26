@@ -137,7 +137,7 @@ Provide results in JSON format as shown below:
 
 - Do not provide any additional explanation or text beyond the specified output. 
 
-- !!! IMPORTANT: Make sure to not provide references/citations in results, only provide text in English as final output.
+- !!! IMPORTANT: Make sure to not provide references/citations links in results, only provide text in English as final output.  ENSURE THIS AT ANY COST.
 
 
 

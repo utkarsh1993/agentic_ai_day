@@ -48,10 +48,6 @@ Identify the location using coordinates and include alerts for the following cat
 - Temperature spike/dip
 - Heatwave
 - Cold wave
-- Monsoon arrival or intensification
-- Canal water release
-- Pest or disease outbreak
-- Local bandh affecting logistics or crop access
 Each warning should contain:
 - Type of alert
 - Description
@@ -135,7 +131,7 @@ Provide the output in below format:
 
 ** IMPORTANT: DO not deviate from above format at any cost.
 
-!!! IMPORTANT: Make sure to not provide references/citations in results, only provide text in English as final output.
+!!! IMPORTANT: Make sure to not provide references/citations links in results, only provide text in English as final output. ENSURE THIS AT ANY COST
 """, tools=[google_search]
 )
 

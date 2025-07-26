@@ -77,7 +77,7 @@ Provide the results in JSON format as shown below with keys:
 
 - Do not provide any additional explanation or text beyond the specified output. 
 
-- !!! IMPORTANT: Ensure to not provide references/citations in results, only provide text as final output.
+- !!! IMPORTANT: Ensure to not provide references/citations links in results, only provide text as final output.  ENSURE THIS AT ANY COST
 
 - Do no generate the output in bold or heading format.
 

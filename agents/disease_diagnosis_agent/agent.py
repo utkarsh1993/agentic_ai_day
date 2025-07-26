@@ -78,7 +78,7 @@ disease_diagnosis_agent = Agent(
 
 - Do not provide any additional explanation or text beyond the specified output. 
 
-- !!! Do not provide references/citations in results, only provide text as final output.
+- !!! Do not provide references/citations links in results, only provide text as final output.  ENSURE THIS AT ANY COST
 
 """,
 tools = [google_search]
