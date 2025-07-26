@@ -34,7 +34,7 @@ generate_content_config = types.GenerateContentConfig(
 
 disease_diagnosis_agent = Agent(
     name="disease_diagnosis_agent",
-    model="gemini-2.5-pro",
+    model="gemini-2.5-flash",
     description="Plant disease diagnosis agent for India",
     generate_content_config=generate_content_config,
     instruction="""You are a specialized AI model trained as a plant pathologist. Your task is to provide home remedies or fertilizer or pesticides for a given plant disease, with a focus on solutions available in India.

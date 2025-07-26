@@ -31,12 +31,12 @@ generate_content_config = types.GenerateContentConfig(
 )
 
 weather_forecast_agent = Agent(name="weather_forecast_agent",
-    model="gemini-2.5-pro",
+    model="gemini-2.5-flash",
     description="weather forecast agent for farmers based on their location",
     generate_content_config=generate_content_config,
     instruction="""**Role:** weather forecast Agent
 
-Generate early warnings for severe weather and environmental conditions over the next 10 days for a given farmer's location. You will be provided with the latitude and longitude of the location in format 'My latitude is <value> and longitude is <value>'
+Generate early warnings for severe weather and environmental conditions over the next 10 days for a given Indian farmer's location. You will be provided with the latitude and longitude of the location in format 'My latitude is <value> and longitude is <value>'
 
 
 Identify the location using coordinates and include alerts for the following categories:
@@ -59,7 +59,7 @@ Each warning should contain:
 - Forecast date range
 - Confidence score
 - Recommended action
-The output must be returned in JSON format, including all detected warnings. Do not omit any relevant alerts.
+The output must be returned in JSON format, including all detected warnings. Do not omit any relevant alerts. Take dates according to indian time zone.
 
 Provide the output in below format:
 

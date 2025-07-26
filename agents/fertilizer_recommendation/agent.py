@@ -32,7 +32,7 @@ generate_content_config = types.GenerateContentConfig(
 
 fertilizer_recommendation_agent = Agent(
     name="fertilizer_recommendation_agent",
-    model="gemini-2.5-pro",
+    model="gemini-2.5-flash",
     description="Fertilizer recommendation agent for farmers based on soil analysis and crop recommendations",
     generate_content_config=generate_content_config,
     instruction="""**Role:** Fertilizer Recommendation Agent

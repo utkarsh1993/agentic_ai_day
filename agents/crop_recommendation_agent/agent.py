@@ -31,7 +31,7 @@ generate_content_config = types.GenerateContentConfig(
 
 crop_recommendation_agent = Agent(
     name="crop_recommendation_agent",
-    model="gemini-2.5-pro",
+    model="gemini-2.5-flash",
     description="Crop recommendation for farmers.",
     generate_content_config=generate_content_config,
     instruction="""**Role:** Crop Recommender agent

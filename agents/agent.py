@@ -7,8 +7,9 @@ from agents.crop_recommendation_agent.agent import execute as execute_crop_recom
 from agents.early_warning_system.agent import execute as execute_warning
 from agents.ask_me_anything_agent.agent import execute as execute_ama
 from agents.commodity_agent.agent import execute as execute_for_profitability
-from agents.risk_mitigation.local_alerts_agent import execute as execute_for_weather_risk
-from agents.risk_mitigation.weather_risk_agent import execute as execute_for_local_alerts
+from agents.risk_mitigation.local_alerts_agent import execute as execute_for_local_alerts
+from agents.risk_mitigation.weather_risk_agent import execute as execute_for_weather_risk
+from agents.risk_mitigation.weather_risk_agent_long_term import execute as execute_for_seasonal_weather_risk
 import vertexai
 
 
@@ -57,6 +58,10 @@ async def execute(request):
         agent_to_call = "early_warning_system"
         print(agent_to_call)
         agent_response = await execute_warning(request)
+    elif "seasonal weather risk" in user_query.lower():
+        agent_to_call = "seasonal_weather_risk_agent"
+        print(agent_to_call)
+        agent_response = await execute_for_seasonal_weather_risk(request)
     elif "weather risk" in user_query.lower():
         agent_to_call = "weather_risk_agent"
         print(agent_to_call)

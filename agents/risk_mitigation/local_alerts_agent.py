@@ -31,7 +31,7 @@ generate_content_config = types.GenerateContentConfig(
 )
 
 local_alerts_agent = Agent(name="local_alerts_agent",
-    model="gemini-2.5-pro",
+    model="gemini-2.5-flash",
     description="Local alerts agent such as spread of pest, protest, bandhs, riots etc. for farmers based on their location",
     generate_content_config=generate_content_config,
     instruction="""**Role:** local alerts agent

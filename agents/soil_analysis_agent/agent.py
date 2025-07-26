@@ -31,7 +31,7 @@ generate_content_config = types.GenerateContentConfig(
 
 soil_analyzer_agent = Agent(
     name="soil_analyzer",
-    model="gemini-2.5-pro",
+    model="gemini-2.5-flash",
     description="Soli analysis for farmers using location",
     generate_content_config=generate_content_config,
     instruction="""**Role:** Soil Analyzer agent

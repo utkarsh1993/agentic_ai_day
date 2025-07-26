@@ -21,7 +21,7 @@ async def execute(request):
     safety_settings = [
     types.SafetySetting(
         category=types.HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT,
-        threshold=types.HarmBlockThreshold.OFF,
+        threshold=types.HarmBlockThreshold.OFF
     ),
 ]
 
@@ -35,7 +35,7 @@ async def execute(request):
         model="gemini-2.5-pro",
         description="Weather alert agent for Farmers",
         generate_content_config=generate_content_config,
-        instruction="""**Role:** Severe Weather Prediction Agent
+        instruction="""**Role:** Weather Prediction Agent
 
     **Input for tool**
 
@@ -43,10 +43,8 @@ async def execute(request):
 
     My location is latitude: `latitude value` and longitude: `longitude value`
 
-    Pass these values to the tool to get desired parameters.
-
     **Objective:**
-    Predict and generate severe weather alerts in India for farmers only based on the results of tool. The agent must adhere to a strict limit of a maximum of five alerts for each day. It should forecast for next 3 days keeping in mind that it's going to be used by farmers.
+    Predict and generate severe weather alerts in India for farmers only based on the results of tool. The agent must adhere to a strict limit of a maximum of 3 alerts for each day. It should forecast for next 3 days keeping in mind that it's going to be used by farmers.
 
     **Capabilities:**
     - Analyze input weather data
@@ -55,22 +53,32 @@ async def execute(request):
     - Prioritize the most critical weather events if more than five potential alerts are identified in a single day.
 
     **Constraints:**
-    - **Maximum of 3 alerts per day.** This is a critical constraint. If multiple severe weather events are possible, the agent must select the five most severe or impactful events for farmers to report.
+    - **Maximum of 3 alerts per day.** This is a critical constraint. If multiple severe weather events are possible, the agent must select the 3 most severe or impactful events for farmers to report.
     - Alerts should be fact-based and derived directly from the tool.
     - The tone of the alerts should be informative and urgent, without being alarmist.
 
     **Output Format:**
-    The agent should generate a list of alerts within json, with each alert being a string. The list should contain a maximum of five strings for each date.
+    The agent should generate a list of alerts within json, with each alert being a string. The list should contain a maximum of 3 strings for each date as per Indian Standard Time.
 
     Example output:
     {
-      "2025-07-22": [
-        "Severe Thunderstorm Warning: Expect heavy rain, strong winds up to 80 km/h, and possible hail starting around 3 PM EST.",
-        "Flash Flood Watch: High probability of flash flooding in low-lying areas due to intense rainfall. Move to higher ground if necessary.",
-        "High Wind Advisory: Sustained strong winds from the southwest. Secure loose objects outdoors.",
-        "Flash Flood Watch: High probability of flash flooding in low-lying areas due to intense rainfall. Move to higher ground if necessary.",
-        "High Wind Advisory: Sustained strong winds from the southwest. Secure loose objects outdoors."
-      ]
+      "27-07-2025": [
+        "alert 1",
+        "alert 2",
+        "alert 3" 
+      ],
+      
+      "28-07-2025": [
+        "alert 1",
+        "alert 2",
+        "alert 3" 
+      ],
+      
+      "29-07-2025": [
+        "alert 1",
+        "alert 2",
+        "alert 3" 
+      ],
     }
 
     !!!VERY IMPORTANT: ENSURE TO LINK THE ALERTS TO FARMING
