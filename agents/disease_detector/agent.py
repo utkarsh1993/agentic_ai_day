@@ -2,6 +2,7 @@ from google.adk.agents import Agent
 from google.adk.runners import Runner
 from google.adk.sessions import InMemorySessionService
 from google.genai import types
+from google.adk.tools import google_search
 import base64
 from agents.disease_diagnosis_agent.agent import execute as execute_diagnosis
 
@@ -52,7 +53,9 @@ disease_detector_agent = Agent(
 *   **For a healthy leaf:** `Healthy`
 *   **If unable to determine:** `Unable to determine`
 
-Do not provide any additional explanation or text beyond the specified output."""
+Do not provide any additional explanation or text beyond the specified output.""",
+
+tools = [google_search]
 )
 
 
