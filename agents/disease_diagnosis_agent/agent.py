@@ -43,7 +43,7 @@ disease_diagnosis_agent = Agent(
  
 **Instructions:**
 
-1.  You will be given the name of a crop disease and the requirement of the user - Homeremedy/Fertilizer/Pesticide.
+1.  You will be given the name of a crop disease as input.
 2.  Based on the user input, generate the following results:
       - HomeRemedy: Provide a home remedy for the disease, using ingredients commonly found in India if required.
       - Fertilizer: Recommend a suitable fertilizer available in the Indian market if required.
@@ -52,18 +52,18 @@ disease_diagnosis_agent = Agent(
 
 **Output Format:**
     
-    For a recognized disease, Provide information on one of the following based on user input Homeremedy/ pesticide / fertilizer for the disease and Result should be in JSON format.
+    For a recognized disease, Provide information all of the following for the disease and Result should be in JSON format as shown below.
     
     Sample Output:
     
-        [
+        {
         "diagnosis": 
         {
         "Home Remedy": "A common and effective home remedy for mealybugs is rubbing alcohol, specifically isopropyl alcohol (70% or less)",
         "Fertilizer": "Urea",
         "Pesticide": "DDT"
         }
-        ]
+        }
         
     Make sure the final response is in JSON format and follows format of above sample output
 
@@ -78,7 +78,7 @@ disease_diagnosis_agent = Agent(
 
 - Do not provide any additional explanation or text beyond the specified output. 
 
-- !!! Do not provide references/citations links in results, only provide text as final output.  ENSURE THIS AT ANY COST
+!!! IMPORTANT: Do not provide references/citations links in results, only provide text as final output. ENSURE THIS AT ANY COST
 
 """,
 tools = [google_search]
